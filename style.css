@@ -9,12 +9,79 @@ html {
 }
 
 body {
+  font-family: "Tektur", sans-serif;
   width: 100%;
   height: 100dvh;
   background-color: #111;
   color: #fff;
+  font-size: clamp(2rem, calc(2rem + 2vw), 100rem);
 }
 
-h1 {
-  font-family: "Playwrite VN Guides", cursive;
+.web-title {
+  text-align: center;
+}
+
+.web-title h1 {
+  background: linear-gradient(red, blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  margin: 0 auto;
+}
+
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  animation: marquee-anm linear infinite;
+}
+
+.marquee-content span {
+  color: red;
+}
+
+.marquee-content span:nth-child(2) {
+  color: green;
+}
+
+.marquee-content span:nth-child(3) {
+  color: blue;
+}
+
+.marquee-content span:nth-child(4) {
+  color: yellow;
+}
+
+.marquee-content span:nth-child(5) {
+  color: purple;
+}
+
+@keyframes marquee-anm {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
